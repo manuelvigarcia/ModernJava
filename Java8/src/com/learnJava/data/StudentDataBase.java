@@ -35,4 +35,10 @@ public class StudentDataBase {
         List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6);
         return students;
     }
+    public static List<Student> getAllStudents(boolean traceThis){
+        if (traceThis){
+            System.out.println("Obtaining all students data from Database.");
+        }
+        return getAllStudents();
+    }
 }
