@@ -1,6 +1,7 @@
 package com.learnJava.data;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Student {
@@ -16,6 +17,15 @@ public class Student {
         this.gpa = gpa;
         this.gender = gender;
         this.activities = activities;
+    }
+
+    /** empty constructor to be used as method reference*/
+    public Student(){
+        this("John Doe");
+    }
+
+    public Student(String name) {
+        this(name, 0, 0.0, "Not binary", null);
     }
 
     public String getGender() {
@@ -58,6 +68,10 @@ public class Student {
 
     public void setActivities(List<String> activities) {
         this.activities = activities;
+    }
+
+    public void printListOfActivities(){
+        System.out.println(activities);
     }
 
     @Override
