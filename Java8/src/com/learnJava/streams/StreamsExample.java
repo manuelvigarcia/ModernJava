@@ -73,5 +73,34 @@ public class StreamsExample {
                 .filter(studentGpaPredicate)
                 .collect(Collectors.toMap(Student::getName, Student::getActivities));
 
+        // to debug streams you may divide them in steps or you can use the peek method
+        System.out.println("Peek inside the stream operations" +
+                "");
+        Map<String, List<String>> debuggableStream = StudentDataBase.getAllStudents().stream()
+                .peek((student -> System.out.println("Init: " + student.getName())))
+                .filter(studentGradePredicate)
+                .peek((student -> System.out.println("1 st: " + student.getName())))
+                .filter(studentGpaPredicate)
+                .peek((student -> System.out.println("2 nd: " + student.getName())))
+                .collect(Collectors.toMap(Student::getName, Student::getActivities));
+                /* This prints the output in the order of traversing. You can extract the text from the console and sort it:
+                    Init: Sophia
+                    Init: Jenny
+                    Init: James
+                    Init: Emily
+                    Init: Dave
+                    Init: Adam
+
+                    1 st: Sophia
+                    1 st: James
+                    1 st: Emily
+                    1 st: Dave
+
+                    2 nd: James
+                    2 nd: Emily
+                    2 nd: Dave
+
+                So you see which elements pass each step.
+                 */
     }
 }
