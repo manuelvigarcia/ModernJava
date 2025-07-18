@@ -11,7 +11,7 @@ public class SupplierExample {
 
     public static void main(String[] args) {
         Supplier<Student> studentSupplier=()->{
-            return new Student("Adam", 2, 3.6, "male", Arrays.asList("swimming", "basketball","Volleyball"));
+            return new Student("Adam", 2, 3.6, "male", Arrays.asList("swimming", "basketball","Volleyball"), 0);
         };
         Supplier<List<Student>> listSupplier = () -> StudentDataBase.getAllStudents();
         System.out.println("New Student is: " + studentSupplier.get());

@@ -10,13 +10,15 @@ public class Student {
     private double gpa;
     private String gender;
     List<String> activities = new ArrayList<>();
+    private int notebooks;
 
-    public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities) {
+    public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities, int notebooks) {
         this.name = name;
         this.gradeLevel = gradeLevel;
         this.gpa = gpa;
         this.gender = gender;
         this.activities = activities;
+        this.notebooks = notebooks;
     }
 
     /** empty constructor to be used as method reference*/
@@ -25,7 +27,7 @@ public class Student {
     }
 
     public Student(String name) {
-        this(name, 0, 0.0, "Not binary", null);
+        this(name, 0, 0.0, "Not binary", null, 0);
     }
 
     public String getGender() {
@@ -60,8 +62,6 @@ public class Student {
         this.gpa = gpa;
     }
 
-
-
     public List<String> getActivities() {
         return activities;
     }
@@ -74,6 +74,10 @@ public class Student {
         System.out.println(activities);
     }
 
+    public int getNotebooks(){return notebooks;}
+
+    public void setNotebooks(int notebooks){this.notebooks = notebooks;}
+
     @Override
     public String toString() {
         return "Student{" +
@@ -82,6 +86,7 @@ public class Student {
                 ", gpa=" + gpa +
                 ", gender='" + gender + '\'' +
                 ", activities=" + activities +
+                ", notebooks=" + notebooks +
                 '}';
     }
 
