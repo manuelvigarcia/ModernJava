@@ -26,4 +26,27 @@ public class DaysInMonth {
         return noOfDays;
 
     }
+    public static int getDaysEnhancedSwitch(Month month, int year) {
+        return switch (month){
+            case SEPTEMBER, APRIL, JUNE, NOVEMBER -> 30;
+            case FEBRUARY -> {
+                System.out.println("Checking if " + year + " is a leap year . . .");
+                // yield marks the return expression for the multiline case.
+                yield Year.isLeap(year)?29:28;
+            }
+            default -> 31;
+        };
+    }
+    public static int getDaysEnhancedSwitchExhaustive(Month month, int year) {
+        return switch (month){
+            case SEPTEMBER, APRIL, JUNE, NOVEMBER -> 30;
+            case FEBRUARY -> {
+                System.out.println("Checking if " + year + " is a leap year . . .");
+                // yield marks the return expression for the multiline case.
+                yield Year.isLeap(year)?29:28;
+            }
+            // you may avoid the "default" section of switch if you provide cases for all possible cases.
+            case JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> 31;
+        };
+    }
 }
