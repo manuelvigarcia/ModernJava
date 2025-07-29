@@ -13,6 +13,7 @@ class VehicleTest {
         assertInstanceOf(Vehicle.class, car);
         assertInstanceOf(Vehicle.class, truck);
         //dog cannot be Vehicle. You cannot even test the instanceof
+        // You can later subclass Flying car with anything.
         assertInstanceOf(Vehicle.class, dog);
     }
 
@@ -23,5 +24,17 @@ class VehicleTest {
 
         assertEquals("CAR", car.drive());
         assertEquals("TRUCK", truck.drive());
+    }
+    @Test
+    void connectPhoneTest(){
+        var car = new Car();
+        var truck = new Truck();
+        var flyingCar = new FlyingCar();
+        var dog = new Dog();
+
+        car.connectPhone();
+        flyingCar.connectPhone();
+        dog.connectPhone();
+        // truck.connectPhone(); --> not implemented.
     }
 }
