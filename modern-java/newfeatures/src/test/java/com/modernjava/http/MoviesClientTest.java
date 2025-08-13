@@ -11,4 +11,32 @@ public class MoviesClientTest {
 
     MoviesClient moviesClient = new MoviesClient();
 
+    /*
+    Must have jwebserver running and serving files from modernjava.
+     */
+
+
+    @Test
+    void getMovieById(){
+        var movie = moviesClient.getMovieById();
+
+        assertNotNull(movie);
+        assertEquals("Batman Begins", movie.name());
+    }
+
+    @Test
+    void getMovieByIdAsync(){
+        var movie = moviesClient.getMovieByIdAsync().join();
+
+        assertNotNull(movie);
+        assertEquals("Batman Begins", movie.name());
+    }
+
+    @Test
+    void getAllMoviesById() {
+        var moviesList = moviesClient.getAllMovies();
+
+        assertNotNull(moviesList);
+        assert moviesList.size() == 10;
+    }
 }

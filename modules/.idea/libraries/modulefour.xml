@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="modulefour">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/modules/modulefour/build/libs/modulefour.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
