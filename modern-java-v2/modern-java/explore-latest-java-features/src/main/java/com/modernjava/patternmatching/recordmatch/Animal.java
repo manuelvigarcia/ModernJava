@@ -1,4 +1,4 @@
-package com.modernjava.patternmatching.recordmatch;
+package com.modernjava.patternmatching.recordMatch;
 
 public sealed interface Animal permits Cat, Dog {
 }
